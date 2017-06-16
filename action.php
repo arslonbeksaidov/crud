@@ -26,7 +26,7 @@ class DataOperation extends Database
         }
         return $array;
     }
-
+//bu select
     public function select_record($table, $where)
     {
         $sql = "";
