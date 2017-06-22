@@ -59,7 +59,7 @@ class DataOperation extends Database
         $sql = substr($sql, 0, -2);// value. "' AND ";//----------------
         $sql = "UPDATE " . $table . " SET " . $sql . " WHERE " . $condition;
         echo $sql;
-        if (mysqli_query($this->con, $sql)) {
+        if (mysqli_query($this->con, $sql."'")) {
             return true;
         }
     }
@@ -84,7 +84,9 @@ $obj = new DataOperation;
 if (isset($_POST["sumbit"])) {
     $myArray = array(
         "m_name" => $_POST["name"],
+
         "qty" => $_POST["qty"],
+        "date" =>$_POST["name2"]
     );
     if ($obj->insert_record("example", $myArray)) {
         header("location:index.php?msg=Record Inserted");
@@ -95,7 +97,9 @@ if (isset($_POST["edit"])) {
     $where = array("id" => $id);
     $myArray = array(
         "m_name" => $_POST["name"],
-        "qty" => $_POST["qty"]
+        "qty" => $_POST["qty"],
+        "date" => $_POST["name2"]
+
     );
     if ($obj->update_record("example", $where, $myArray)) {
         header("location:index.php?msg=Record Updated Successfully");

@@ -52,6 +52,12 @@ include "action.php";
                                                placeholder="raqam"></td>
                                 </tr>
                                 <tr>
+                                    <td>date</td>
+                                    <td><input type="text" name="name2" class="form-control" value="<?php echo $row["date"]; ?>"
+                                               placeholder="raqam"></td>
+                                </tr>
+
+                                <tr>
                                     <td colspan="2" align="center"><input type="submit" class="btn btn-primary"
                                                                           name="edit" value="Update"></td>
                                 </tr>
@@ -63,12 +69,16 @@ include "action.php";
                         <form method="post" action="action.php">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>name</td>
+                                    <td>mavzu</td>
                                     <td><input type="text" class="form-control" name="name" placeholder="kirit"></td>
                                 </tr>
                                 <tr>
-                                    <td>raqam</td>
+                                    <td>text</td>
                                     <td><input type="text" class="form-control" name="qty" placeholder="raqam"></td>
+                                </tr>
+                                <tr>
+                                    <td>date</td>
+                                    <td><input type="text" class="form-control" name="name2" placeholder="raqam"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="center"><input type="submit" class="btn btn-primary"
@@ -98,6 +108,7 @@ include "action.php";
                     <th>#</th>
                     <th>name</th>
                     <th>aviable stock</th>
+                    <th>date</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -109,6 +120,8 @@ include "action.php";
                         <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["m_name"]; ?></td>
                         <td><b><?php echo $row["qty"]; ?></b></td>
+                        <td><b><?php echo $row["date"]; ?></b></td>
+
                         <td><a href="index.php?update=1&id=<?php echo $row["id"];?>" class="btn btn-info">edit</a></td>
                         <td><a href="index.php?delete=1&id=<?php echo $row["id"];?>" class="btn btn-danger">delete</a></td>
                     </tr>
